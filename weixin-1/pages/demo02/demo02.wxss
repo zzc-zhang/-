@@ -1,0 +1,6 @@
+/* pages/demo02/demo02.wxss */
+.container{
+    width: 32px;
+    height: 50px;
+    background-color: aqua;
+}
