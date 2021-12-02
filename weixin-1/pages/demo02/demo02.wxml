@@ -1,0 +1,104 @@
+<!--pages/demo02/demo02.wxml-->
+<!-- <text class="container">1</text>
+<text>2</text>
+<view>3</view>
+<view>4</view> -->
+<!--1-->
+<view>{{msg}}</view>
+<!--2-->
+<view>{{num}}</view>
+
+<!--3-->
+<view>是否正确：{{isGirl}}</view>
+<!--4-->
+<view>{{person.age}}</view>
+<view>{{person.height}}</view>
+<view>{{person.weight}}</view>
+<view>{{person.name}}</view>
+<!--5-->
+<view data-num="10000" > 自定义属性</view>
+<!--6-->
+<view>
+    <checkbox checked="{{isChecked}}"></checkbox>
+</view>
+<!--7-->
+<view>{{1+1}}</view>
+
+<view>{{'1' + "1"}}</view>
+
+<!--三元表达式 判断11除结果是否等于零,等于就输出偶数不等于就输出奇数-->
+<view>{{ 11%2 === 0 ? '偶数' : '奇数' }}</view>
+<!--
+8.列表循环
+    1.
+    wx:for="{{数组或者对象}}"
+    wx;for-item="循环项的名称"
+    wx:for-index="循环项的索引"
+    2.
+    wx:key="唯一值" 用来提高列表渲染的性能
+        1.wx:key 绑定一个普通的字符串的时候，那么这个字符名称 肯定是 循环数组 中的对象的唯一属性
+        2.wx:key = "*this" 就表示你的数组是一个普通的数组 *this 表示是 循环项
+        [1,2,3,44,5,]
+-->
+<view>
+    <view wx:for="{{list}}"
+          wx:for-item="item"
+          wx:for-index="index"
+          wx:key="id">
+        索引:{{index}}
+        --
+        值:{{item.name}}
+    </view>
+
+</view>
+<view>
+    <view>对象循环</view>
+    <view
+        wx:for="{{person}}"
+        wx:for-item="value"
+        wx:for-index="key"
+        wx:key="age"
+    >
+        属性：{{key}}
+        --
+        值：{{value}}
+    </view>
+</view>
+<!--10.block
+1.占位符
+2.
+-->
+<view>
+    <block
+        wx:for="{{list}}"
+        wx:for-item="item"
+        wx:for-index="index"
+        wx:key="id"
+        class="my_list"
+    >
+        属性：{{index}}
+        --
+        值：{{item.name}}
+    </block>
+</view>
+<!--11.条件渲染
+1.wx:if="{{true/false}}"
+2.if ,else, elif
+-->
+<view>
+    <view>条件渲染</view>
+    <view wx:if="{{true}}">显示</view>
+    <view wx:if="{{false}}">隐藏</view>
+    
+    <view wx:if="{{false}}">1ss</view>
+    <view wx:elif="{{false}}">2ss</view>
+    <view wx:else>3</view>
+    
+    <view>-----------------------------</view>
+    <view hidden >hidden1</view>
+    <view hidden="{{false}}" >hidden1</view>
+    
+    <view>--------------0000-------------</view>
+    <view wx:if="{{false}}">wx:if </view>
+    <view hidden style="display: flex"> hidden </view>
+</view>
