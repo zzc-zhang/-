@@ -1,0 +1,3 @@
+<!--pages/demo05/demo05.wxml-->
+<rich-text nodes="{{htmll}}"></rich-text>
+<rich-text nodes="{{html}}"></rich-text>
