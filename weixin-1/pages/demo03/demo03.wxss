@@ -1,1 +1,9 @@
-/* pages/demo03/demo03.wxss */
+text {
+  color: yellow;
+}
+view .vie1 text {
+  color: aquamarine;
+}
+view {
+  color: red;
+}
