@@ -1,0 +1,44 @@
+<!--pages/demo06/demo06.wxml-->
+<!--
+button 标签
+1.外观属性
+size 控制按钮大小
+	default 默认大小
+	mini  小尺寸
+type 用来控制按钮颜色
+	1.default 灰色
+	2.primary 绿色
+	3.warn 红色
+-->
+<button>默认按钮</button>
+<button size="mini">mini   按钮</button>
+<button size="default" type="default">1默认按钮</button>
+<button type="primary">2默认按钮</button>
+<button size="default" type="warn">3默认按钮</button>
+<button type="primary" loading>4默认按钮</button>
+
+
+<!--button 开发能力
+ open-type:
+1.contact: 直接打开客服对话功能，需要在微信小程序配置
+2.contact: 转发到当前小程序 到微信朋友中    不能发送到朋友圈
+3.getPhoneNumber； 获取当前用户的手机号码信息    只有企业才能获取
+      1.   绑定一个事件  bindgetphonenumber
+      2.   在事件的回调函数中  通过参数来获取信息
+4.getUserInfo： 获取当前用户的个人信息
+   1.方法类似获取手机号码
+   2.更方便，不存在加密的字段
+5.launchApp； 在小程序当中 直接打开app
+   1.需要先在   app中   通过app某个链接    打开小程序app
+   2.在小程序 中   再通过   这个功能   重新打开   这个功能
+6.openSetting；  打开小程序中内置的  授权页面
+7.feedback；   打开  小程序内置的  意见反馈页面
+
+-->
+<button open-type="contact">contact</button>
+<button open-type="share">share</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">getUserInfo</button>
+<button open-type="launchApp">launchApp</button>
+<button open-type="openSetting">openSetting</button>
+<button open-type="feedback">feedback</button>
